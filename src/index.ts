@@ -10,15 +10,15 @@ app.set("view engine", "njk");
 app.get("/", (request, response) => {
   //response.render("home");
 
-  apivideo("http://videogame-api.fly.dev/games", (error, body: string) => {
+  apivideo("http://videogame-api.fly.dev/platforms", (error, body: string) => {
     if (error) {
       throw error;
     }
     const apiResponse = JSON.parse(body);
     const games = apiResponse.games;
-    console.log(games);
+    //console.log(games.platform);
 
-    // console.log(apiResponse);
+    console.log(apiResponse);
     response.render("home", { gamesName: games });
     //response.render("home", { joke: ga });
     //response.render("home", { jokeText: joke.value });

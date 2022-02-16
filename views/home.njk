@@ -1,11 +1,12 @@
-
 {% block content %}
 
- {for game in gamesName%}
-   <li> {{game}}</li>
-
+ {%for games in gamesName%}
+   <li> {{games.name}}</li>
+{% else %}
    <li> empty </li>
 
 
-  {% endfor  %}
+  {% endfor %}
+
+
 {% endblock%}
