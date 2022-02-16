@@ -10,21 +10,23 @@ app.set("view engine", "njk");
 app.get("/", (request, response) => {
   //response.render("home");
 
-  apivideo("https://videogame-api.fly.dev/games", (error, body: string) => {
+  apivideo("http://videogame-api.fly.dev/games", (error, body: string) => {
     if (error) {
       throw error;
     }
-    const joke = JSON.parse(body);
-    console.log(joke.games);
+    const apiResponse = JSON.parse(body);
+    const games = apiResponse.games;
+    console.log(games);
+
+    // console.log(apiResponse);
+    response.render("home", { gamesName: games });
     //response.render("home", { joke: ga });
     //response.render("home", { jokeText: joke.value });
-    response.render("home");
+    //response.render("home");
     //response.send(joke);
   });
 });
-// app.get("/", (request, response) => {
-//   response.send("ok");
-// });
+
 app.listen(3000, () => {
   console.log("server started on http://localhost:3000");
 });

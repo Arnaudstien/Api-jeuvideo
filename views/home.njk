@@ -1,8 +1,11 @@
-{% extends "layout.njk" %}
+
 {% block content %}
-<p>test</p>
-<h1>coucou</h1>
-<p>{{jokeText}}</p>
+
+ {for game in gamesName%}
+   <li> {{game}}</li>
+
+   <li> empty </li>
 
 
+  {% endfor  %}
 {% endblock%}
