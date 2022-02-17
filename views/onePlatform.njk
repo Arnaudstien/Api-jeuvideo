@@ -1,0 +1,18 @@
+
+{% block content %}
+<h1/> one platform</h1>
+
+ {%for one in oneName%}
+
+   <li><a href=onePlatform>{{platforms.name}}</a></li>
+
+  <li><a  href=onePlatform/{{platforms.id}}>{{platforms.name}}</a></li>
+{% else %}
+   <li> empty </li>
+
+
+  {% endfor %}
+
+
+{% endblock%}
+

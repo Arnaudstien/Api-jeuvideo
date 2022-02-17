@@ -1,0 +1,18 @@
+
+{% block content %}
+<h1/> Choisissez votre Platforme !!!!</h1>
+
+ {%for platforms in platName%}
+
+   <li><a href=home>{{platforms.name}}</a></li>
+
+  <li><a  href=home/{{platforms.id}}>{{platforms.name}}</a></li>
+{% else %}
+   <li> empty </li>
+
+
+  {% endfor %}
+
+
+{% endblock%}
+
