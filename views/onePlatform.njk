@@ -1,11 +1,17 @@
 
 {% block content %}
-<h1/> one platform</h1>
+<p>Navigation</p>
+<ul>
+  <li><a href=home>Nom des jeux</a></li>
+  <li><a href=/>liste </a></li>
+  <li><a href=test>Id</a></li>
+</ul>
+<h1/> one platform ID</h1>
 
  {%for one in oneName%}
 
-   <li>platforms.name</li>
-   <li>platforms.id</li>
+
+   <li>{{one.id}}</li>
 {% else %}
    <li> empty </li>
 

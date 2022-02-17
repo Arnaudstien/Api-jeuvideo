@@ -7,7 +7,7 @@ nunjucks.configure("views", { autoescape: true, express: app });
 
 app.set("view engine", "njk");
 
-//Route Home.njk affiche 20 jeux
+//Route Home.njk
 app.get("/home", (request, response) => {
   apivideo("http://videogame-api.fly.dev/games/", (error, body: string) => {
     //apivideo("http://videogame-api.fly.dev/platforms/", (error, body: string) => {
@@ -19,7 +19,8 @@ app.get("/home", (request, response) => {
     response.render("home", { gamesName: games });
   });
 });
-//Route platform.njk affiche platform
+
+//Route platform.njk
 app.get("/", (request, response) => {
   apivideo("http://videogame-api.fly.dev/platforms/", (error, body: string) => {
     if (error) {
@@ -27,12 +28,11 @@ app.get("/", (request, response) => {
     }
     const apiResp = JSON.parse(body);
     const platforms = apiResp.platforms;
-    //console.log(platforms);
-
     response.render("platform", { platName: platforms });
   });
 });
 
+// Route test.njk
 app.get("/test", (request, response) => {
   apivideo("http://videogame-api.fly.dev/genres", (error, body: string) => {
     if (error) {
@@ -40,19 +40,22 @@ app.get("/test", (request, response) => {
     }
     const apiTest = JSON.parse(body);
     const platfo = apiTest.genres;
-    console.log(platfo);
-
     console.log(apiTest.platforms);
     response.render("test", { testName: platfo });
   });
 });
-app.get("/onePlatforme", (request, response) => {
-  apivideo("http://videogame-api.fly.dev/platforms", (error, body: string) => {
+
+//Route onePlatform.njk
+app.get("/onePlatform", (request, response) => {
+  apivideo("http://videogame-api.fly.dev/platforms/", (error, body: string) => {
     if (error) {
       throw error;
     }
     const apiEssais = JSON.parse(body);
-    const one = apiEssais.genres;
+    const one = apiEssais.platforms;
+    //console.log(apiEssais);
+
+    console.log(one);
 
     response.render("onePlatform", { oneName: one });
   });
