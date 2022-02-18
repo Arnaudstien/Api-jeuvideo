@@ -2,15 +2,15 @@
 {% block content %}
 <p>Navigation</p>
 <ul>
-  <li><a href=test>Type de jeux</a></li>
-  <li><a href=/>liste </a></li>
-  <li><a href=onePlatform>Id</a></li>
+
+  <li><a href=/>Home page</a></li>
+
 </ul>
 <h1>Nom des jeux </h1>
 
  {%for games in gamesName%}
 
-  <li><a  href=test/{{games.id}}>{{games.name}}</a></li>
+  <li><a  href=twoPlatform/{{games.id}}>{{games.name}}</a></li>
 
 {% else %}
    <li> empty </li>

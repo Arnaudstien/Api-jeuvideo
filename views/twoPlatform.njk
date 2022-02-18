@@ -3,9 +3,10 @@
 {% block content %}
 <p>Navigation</p>
 <ul>
-  <li><a href=home>Nom des jeux</a></li>
-  <li><a href=/test>liste </a></li>
-  <li><a href=onePlatform>Id</a></li>
+<li><a href=/>Home page</a></li>
+<li><a href=/home/>list of games</a></li>
+
+
 </ul>
 <h1>Choix du type de jeu</h1>
 
@@ -13,7 +14,7 @@
  {%for playgames in twoName%}
 
 
-  <li><a  href=home/test/{{playgames.id}}>{{playgames.name}}</a></li>
+  <li><a  href=home/test/{{playgames.screensshots.url}}>{{playgames}}</a></li>
 
 
 

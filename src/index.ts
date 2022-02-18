@@ -35,17 +35,16 @@ app.get("/home/:id_platform", (request, response) => {
 //Route test.njk affiche
 app.get("/home/twoPlatform/:id", (request, response) => {
   const idParams = request.params.id;
+  console.log("££££££££idParams£££££££", idParams);
 
-  apivideo(`http://videogame-api.fly.dev/games/platforms/${idParams}`, (error, body: string) => {
+  apivideo(`http://videogame-api.fly.dev/games/${idParams}`, (error, body: string) => {
     if (error) {
       throw error;
     }
     const apiResp = JSON.parse(body);
-    console.log(apiResp);
-
-    const playgames = apiResp.games;
-    console.log(playgames);
-
+    console.log("*************apiResp****************", apiResp);
+    const playgames = apiResp.id;
+    console.log("******************************", playgames);
     response.render("twoPlatform", { twoName: playgames, parId: idParams });
   });
 });
