@@ -1,4 +1,4 @@
-
+{% extends "layout.njk" %}
 {% block content %}
 <p>Navigation</p>
 <ul>
@@ -10,6 +10,8 @@
 
  {%for games in gamesName%}
    <li> {{games.name}}</li>
+  <li><a  href=test/{{games.id}}>{{games.name}}</a></li>
+
 {% else %}
    <li> empty </li>
 

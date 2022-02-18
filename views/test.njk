@@ -9,10 +9,15 @@
 </ul>
 <h1>Choix du type de jeu</h1>
 
- {%for platfo in testName%}
-   <li> {{platfo.name}}</li>
+
+ {%for game in gamesNames%}
+   <li> {{games.name}}</li>
+  <li><a  href=test/{{games.id}}>{{games.name}}</a></li>
+
+ {# {%for platfo in testName%}
+   <li> {{platfo.slug}}</li>
 {% else %}
-   <li> empty </li>
+   <li> empty </li> #}
 
 
   {% endfor %}
