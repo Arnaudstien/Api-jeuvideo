@@ -1,0 +1,24 @@
+
+{% extends "layout.njk" %}
+{% block content %}
+<p>Navigation</p>
+<ul>
+  <li><a href=home>Nom des jeux</a></li>
+  <li><a href=/test>liste </a></li>
+  <li><a href=onePlatform>Id</a></li>
+</ul>
+<h1>Choix du type de jeu</h1>
+
+
+ {%for playgames in twoName%}
+
+
+  <li><a  href=home/test/{{playgames.id}}>{{playgames.name}}</a></li>
+
+
+
+
+  {% endfor %}
+
+
+{% endblock%}
